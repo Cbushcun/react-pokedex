@@ -1,0 +1,53 @@
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+
+$primary-color: #fc5347;
+$secondary-color: #fffdeb;
+$accent-color: #a8362d;
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-screen {
+    position: relative;
+    background-color: $primary-color;
+    height: 100vh;
+    width: 100vw;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-color;
+    height: 15vh;
+    width: 97%;
+    max-width: 1000px;
+    min-width: 500px;
+    border-radius: 0 0 30px 30px;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid $accent-color;
+    border-top: none;
+}
+
+.title-text h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.tile:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
