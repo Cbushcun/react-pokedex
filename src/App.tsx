@@ -1,5 +1,8 @@
+import HomeScreen from "./components/menu_screens/HomeScreen";
+
 import "../node_modules/bootstrap/scss/bootstrap.scss"
 import "./App.scss";
+
 
 // Add other tile menus after tile clicks
 function App() {
@@ -10,7 +13,7 @@ function App() {
           <div className="title-text">
             <h1>Pokedex</h1>            
           </div>
-          {/* add propigation or whatever so that the app screen can change depedning on anchor element selection */}
+          <HomeScreen />
         </div>
       </div>
     </>

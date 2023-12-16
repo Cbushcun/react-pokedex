@@ -1,4 +1,4 @@
-@import "../App.scss";
+@import "../../App.scss";
 
 .tile-container {
     display: flex;
@@ -36,6 +36,7 @@
 .tile-img {
     position: absolute;
     height: 100%;
+    width: 100%;
     transition: opacity 0.3s ease
 }
 
