@@ -9,7 +9,7 @@ import itemsIcon from "../../assets/tile-icons/items.svg";
 import abilitiesIcon from "../../assets/tile-icons/abilities.svg";
 import movesIcon from "../../assets/tile-icons/moves.svg";
 
-const TileDisplay = () => {
+const HomeScreen = () => {
   return (
     <div className="tile-display">
         <TileComponent iconUrl={searchIcon} iconText="Search" />
@@ -22,4 +22,4 @@ const TileDisplay = () => {
   );
 };
 
-export default TileDisplay;
+export default HomeScreen;
