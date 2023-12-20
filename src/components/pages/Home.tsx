@@ -1,4 +1,4 @@
-import "../scss/TileDisplayFormat.scss";
+import "../../scss/components/TileDisplayFormat.scss";
 
 import TileComponent from "../TileComponent";
 

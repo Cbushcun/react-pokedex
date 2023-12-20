@@ -1,12 +1,10 @@
-import { useState } from "react";
-import HomeScreen from "./menu_screens/HomeScreen";
+import Home from "../components/pages/Home";
 
 const TileDisplay = () => {
-  const [previousScreen, setPreviousScreen] = useState<string | null>(null);
 
   return (
     <>
-      <HomeScreen />
+      <Home />
     </>
 
   );
