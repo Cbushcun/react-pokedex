@@ -1,4 +1,4 @@
-import TileDisplay from "./components/TileDisplay";
+import Home from "./components/pages/Home";
 
 import "../node_modules/bootstrap/scss/bootstrap.scss"
 import "./App.scss";
@@ -7,12 +7,7 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <div className="main-screen">
-          <div className="title-text">
-            <h1>Pokédex</h1>            
-          </div>
-          <TileDisplay />
-        </div>
+    <Home />
     </>
    );
 }
