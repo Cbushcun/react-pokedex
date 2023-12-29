@@ -1,4 +1,4 @@
-import "../scss/components/TileComponent.scss"
+import "../scss/components/PokemonTileComponent.scss"
 
 const TileComponent = ({
   iconUrl,

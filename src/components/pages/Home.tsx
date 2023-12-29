@@ -17,12 +17,12 @@ const HomeScreen = () => {
         <h1>Pokédex</h1>
       </div>
       <div className="tile-display">
-        <TileComponent iconUrl={searchIcon} iconText="Search" />
-        <TileComponent iconUrl={pokemonIcon} iconText="Pokémon" />
-        <TileComponent iconUrl={regionIcon} iconText="Regions" />
-        <TileComponent iconUrl={itemsIcon} iconText="Items" />
-        <TileComponent iconUrl={abilitiesIcon} iconText="Abilities" />
-        <TileComponent iconUrl={movesIcon} iconText="Moves" />
+        {/*<TileComponent iconUrl={searchIcon} iconText="Search" tileRoute="/search" />*/}
+        <TileComponent iconUrl={pokemonIcon} iconText="Pokémon" tileRoute="/pokemon"/>
+        <TileComponent iconUrl={regionIcon} iconText="Regions" tileRoute="/regions"/>
+        <TileComponent iconUrl={itemsIcon} iconText="Items" tileRoute="/items"/>
+        <TileComponent iconUrl={abilitiesIcon} iconText="Abilities" tileRoute="/abilities"/>
+        <TileComponent iconUrl={movesIcon} iconText="Moves" tileRoute="/moves"/>
       </div>
     </div>
   );
