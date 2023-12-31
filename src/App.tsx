@@ -1,20 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./components/pages/Home";
-import Pokemon from "./components/pages/Pokemon";
-
 import "../node_modules/bootstrap/scss/bootstrap.scss";
 import "./App.scss";
 
+import Background from "./components/Background";
+
 // Add other tile menus after tile clicks
 function App() {
+
   return (
     <>
+      <Background />
       <BrowserRouter>
-        <Routes>
+        {/*<Routes>
           <Route index element={<Home/>} />
           <Route path="/pokemon" element={<Pokemon />} />
-        </Routes>
+  </Routes>*/}
       </BrowserRouter>
     </>
   );

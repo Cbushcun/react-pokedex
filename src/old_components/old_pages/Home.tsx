@@ -1,7 +1,7 @@
 import "../../scss/components/TileDisplayFormat.scss";
 import "../../App.scss";
 
-import TileComponent from "../TileComponent";
+import TileComponent from "../old_TileComponent";
 
 import searchIcon from "../../assets/tile-icons/search.svg";
 import pokemonIcon from "../../assets/tile-icons/pokemon.svg";
