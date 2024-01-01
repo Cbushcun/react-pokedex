@@ -1,0 +1,31 @@
+@import "../../App.scss";
+
+/* Remove all preset bootstrap borders */
+$nav-tabs-border-width: 0;
+
+/* Navbar variables */
+$nav-tabs-link-active-color: $white;
+$nav-tabs-link-active-bg: $red-400;
+$nav-tabs-link-active-border-color: $red-500;
+$nav-tabs-link-hover-border-color: $red-500;
+
+/* Import bootstrap .nav */
+@import "../../../node_modules/bootstrap/scss/nav";
+
+/* Bootstrap .nav overrides */
+.nav {
+    padding-top: 5px;
+}
+.nav-link.active {
+    border-bottom: 3px solid;
+}
+
+.nav-link:hover {
+    color: $white;
+    background-color: rgba(255,255,255,0.3);
+    border-bottom: 3px solid $white;
+}
+
+.nav-link {
+    color: $white;
+}

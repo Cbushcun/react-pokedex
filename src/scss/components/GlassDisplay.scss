@@ -1,0 +1,11 @@
+@import "../../App.scss";
+
+.glass-display {
+    padding-top: 10px;
+    height: 93vh;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 10px 3px black, inset 0 0 30px 5px rgba(255,255,255,0.5);
+    overflow-y: scroll;
+}
