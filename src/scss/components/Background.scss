@@ -6,12 +6,20 @@ path {
 
 .background--custom {
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: -2;
   top: 0;
   left: 0;
+}
+
+.filter {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 
 @keyframes path0 {

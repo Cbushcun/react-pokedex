@@ -15,6 +15,8 @@ $nav-tabs-link-hover-border-color: $red-500;
 /* Bootstrap .nav overrides */
 .nav {
     padding-top: 5px;
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
 }
 .nav-link.active {
     border-bottom: 3px solid;

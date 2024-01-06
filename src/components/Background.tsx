@@ -34,6 +34,7 @@ const Background = () => {
         }}
         />
       </svg>
+      <div className="filter"></div>
     </>
   );
 };

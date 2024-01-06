@@ -27,14 +27,16 @@ const Pokemon = () => {
   }, []);
   
   return (
-      <div className="row row-cols-4">
+      <>
+      <div className="mx-2 row row-cols-xs-2 row-cols-sm-3 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5">
       {
         pokemonData.map((pokemon) =>
-        <div className="col">
+        <div className="col my-1">
           <PokeCard pokeNameProp={ pokemon } />
         </div>)
       }
       </div>    
+      </>
   );
 };
 

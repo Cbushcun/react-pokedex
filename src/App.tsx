@@ -14,15 +14,10 @@ function App() {
     <>
       <Background />
       <Navbar />
-      <GlassDisplay>
-        <Pokemon />
-      </GlassDisplay>
-
       <BrowserRouter>
-        {/*<Routes>
-          <Route index element={<Home/>} />
-          <Route path="/pokemon" element={<Pokemon />} />
-        </Routes>*/}
+        <Routes>
+          <Route index element={<Pokemon />} />
+        </Routes>
       </BrowserRouter>
     </>
   );
