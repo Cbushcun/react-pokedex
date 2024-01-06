@@ -15,29 +15,34 @@ const PokeCard: React.FC<PokemonCardProps> = ({ pokeNameProp }) => {
   const [pokeSpriteUrl, setPokeSpriteUrl] = useState("");
   const [pokeTypes, setPokeTypes] = useState<PokemonType[]>();
   const [pokeStats, setPokeStats] = useState<PokemonStat[]>();
+  const [loading, setLoading] = useState<Boolean>(true);
 
   // Capitalized variables for page display
   const pokeTitle = capitalizeTitle(pokeName);
 
-  // API creation
   const api = new PokemonClient();
 
-  // Obtain information for card display
-  const getPokeInfo = async () => {
-    try {
-      const res = await api.getPokemonByName(pokeName);
-      // Checks for sprite, types, and stats to set variables
-      if (res.sprites.front_default && res.types && res.stats) {
-        setPokeSpriteUrl(res.sprites.front_default);
-        setPokeTypes(res.types);
-        setPokeStats(res.stats);
-      }
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
+  
 
   useEffect(() => {
+
+    // Obtain information for card display
+    const getPokeInfo = async () => {
+      try {
+        const res = await api.getPokemonByName(pokeName);
+        // Checks for sprite, types, and stats to set variables
+        if (res.sprites.front_default && res.types && res.stats) {
+          setPokeSpriteUrl(res.sprites.front_default);
+          setPokeTypes(res.types);
+          setPokeStats(res.stats);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.log("error: ", error);
+        setLoading(false);
+      }
+    };
+
     getPokeInfo();
   }, []);
 
@@ -53,15 +58,24 @@ const PokeCard: React.FC<PokemonCardProps> = ({ pokeNameProp }) => {
       <a href={"/pokemon?name=" + pokeName} className="card-link">
         <div className="row">
           <h2>
+            {/* Pokemon Name */}
             <strong>{pokeTitle}</strong>
           </h2>
         </div>
         <div className="row">
-          <img src={pokeSpriteUrl} className="poke-img col" loading="lazy" />
+          {/* If loading inform user, otherwise, load pokemon sprite */}
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <img src={pokeSpriteUrl} className="poke-img col" loading="lazy" />
+          )}
         </div>
         <div className="row">
-          {pokeTypes?.map((type) => (
-            <div className={"col " + type.type.name}>{type.type.name}</div>
+          {/* Pokemon types display */}
+          {pokeTypes?.map((type, index) => (
+            <div className={"col " + type.type.name} key={index}>
+              {type.type.name}
+            </div>
           ))}
         </div>
         <div className="row">
@@ -69,27 +83,33 @@ const PokeCard: React.FC<PokemonCardProps> = ({ pokeNameProp }) => {
             <strong>Base Stats</strong>
           </h6>
         </div>
-        <div className="row row-cols-2 ">
-          {pokeStats?.map((stats) => (
-            <div className="col">
-              <strong>
-                {stats.stat.name === "attack"
-                  ? "atk"
-                  : stats.stat.name === "defense"
-                  ? "def"
-                  : stats.stat.name === "special-attack"
-                  ? "sp-atk"
-                  : stats.stat.name === "special-defense"
-                  ? "sp-def"
-                  : stats.stat.name === "speed"
-                  ? "spd"
-                  : stats.stat.name}
-                :
-              </strong>{" "}
-              {stats.base_stat}
-            </div>
-          ))}
-        </div>
+        {/* If loading inform user, otherwise load pokemon base stats */}
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="row row-cols-2 ">
+            {pokeStats?.map((stats, index) => (
+              <div className="col" key={index}>
+                <strong>
+                  {/* Converting stats to shorthand for space conservation and formatting */}
+                  {stats.stat.name === "attack"
+                    ? "atk"
+                    : stats.stat.name === "defense"
+                    ? "def"
+                    : stats.stat.name === "special-attack"
+                    ? "sp-atk"
+                    : stats.stat.name === "special-defense"
+                    ? "sp-def"
+                    : stats.stat.name === "speed"
+                    ? "spd"
+                    : stats.stat.name}
+                  :
+                </strong>{" "}
+                {stats.base_stat}
+              </div>
+            ))}
+          </div>
+        )}
       </a>
     </div>
   );

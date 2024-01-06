@@ -6,7 +6,6 @@ import { PokemonClient } from "pokenode-ts";
 
 const Pokemon = () => {
   const [pokemonData, setPokemonData] = useState<string[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
 
   const api = new PokemonClient();
 
@@ -21,17 +20,15 @@ const Pokemon = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
     fetchPokeList();
-    setLoading(false);
   }, []);
   
   return (
       <>
       <div className="mx-2 row row-cols-xs-2 row-cols-sm-3 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5">
       {
-        pokemonData.map((pokemon) =>
-        <div className="col my-1">
+        pokemonData.map((pokemon, index) =>
+        <div className="col my-1" key={ index }>
           <PokeCard pokeNameProp={ pokemon } />
         </div>)
       }
