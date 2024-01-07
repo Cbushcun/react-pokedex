@@ -25,7 +25,7 @@ const Pokemon = () => {
   
   return (
       <>
-      <div className="mx-2 row row-cols-xs-2 row-cols-sm-3 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5">
+      <div className="mx-auto row row-cols-xs-2 row-cols-sm-3 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5">
       {
         pokemonData.map((pokemon, index) =>
         <div className="col my-1" key={ index }>
