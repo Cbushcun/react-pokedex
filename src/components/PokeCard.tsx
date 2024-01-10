@@ -17,6 +17,13 @@ const PokeCard: React.FC<PokemonCardProps> = ({ pokeNameProp }) => {
   const [pokeStats, setPokeStats] = useState<PokemonStat[]>();
   const [loading, setLoading] = useState<Boolean>(true);
 
+  // Capitalize names for displaying outside of data handling
+  function capitalizeTitle(input: string): string {
+    return input
+      .toLowerCase()
+      .replace(/(^|\s)\S/g, (char) => char.toUpperCase());
+  }
+  
   // Capitalized variables for page display
   const pokeTitle = capitalizeTitle(pokeName);
 
@@ -45,13 +52,6 @@ const PokeCard: React.FC<PokemonCardProps> = ({ pokeNameProp }) => {
 
     getPokeInfo();
   }, []);
-
-  // Capitalize names for displaying outside of data handling
-  function capitalizeTitle(input: string): string {
-    return input
-      .toLowerCase()
-      .replace(/(^|\s)\S/g, (char) => char.toUpperCase());
-  }
 
   return (
     <div className="poke-card container text-center m-1">
