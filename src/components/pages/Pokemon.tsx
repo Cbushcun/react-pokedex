@@ -9,17 +9,17 @@ const Pokemon = () => {
 
   const api = new PokemonClient();
 
-  const fetchPokeList = async () => {
-    try {
-      const res = await api.listPokemons(0, 1017);
-      const pokeNames = res.results.map((pokemon) => pokemon.name);
-      setPokemonData(pokeNames);
-    } catch (error) {
-      console.log("error: ", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchPokeList = async () => {
+      try {
+        const res = await api.listPokemons(0, 1017);
+        const pokeNames = res.results.map((pokemon) => pokemon.name);
+        setPokemonData(pokeNames);
+      } catch (error) {
+        console.log("error: ", error);
+      }
+    };
+    
     fetchPokeList();
   }, []);
   
